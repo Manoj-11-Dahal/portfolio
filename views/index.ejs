@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= profile.name %> — Web3 Portfolio</title>
+  <meta name="description" content="A Web3 portfolio website built with HTMX, Node.js, Express, local datasets, and a generated blackhole.glb background." />
+  <meta property="og:title" content="<%= profile.name %> — Web3 Portfolio" />
+  <meta property="og:description" content="HTMX Web3 portfolio with black hole motion, no wallet features, and an Express backend." />
+  <meta property="og:image" content="/assets/og-image.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script defer src="/js/mini-htmx.js"></script>
+  <script defer src="/vendor/motion.js"></script>
+  <script defer src="/js/state.js"></script>
+  <script defer src="/js/main.js"></script>
+  <script defer src="/js/three-background.js"></script>
+</head>
+<body>
+  <div id="preloader" class="preloader" aria-live="polite">
+    <div class="loader-blackhole"><span></span></div>
+    <p>Loading blackhole.glb</p>
+    <small>Parsing model • Initializing 720 scroll frames • Wallet disabled</small>
+  </div>
+  <div class="scroll-progress"><span id="scroll-progress-bar"></span></div>
+  <canvas id="web3-bg" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+
+
+  <nav class="orbit-nav" aria-label="Section orbit navigation">
+    <a href="#top" data-orbit-link="top"><span></span><em>Top</em></a>
+    <a href="#projects" data-orbit-link="projects"><span></span><em>Projects</em></a>
+    <a href="#services" data-orbit-link="services"><span></span><em>Services</em></a>
+    <a href="#pricing" data-orbit-link="pricing"><span></span><em>Pricing</em></a>
+    <a href="#process" data-orbit-link="process"><span></span><em>Process</em></a>
+    <a href="#contact" data-orbit-link="contact"><span></span><em>Contact</em></a>
+  </nav>
+
+  <div class="motion-controls" aria-label="Animation controls">
+    <button id="toggle-motion" class="control-pill" type="button">Pause Motion</button>
+    <button id="cycle-quality" class="control-pill" type="button">Quality: High</button>
+    <button id="state-panel-toggle" class="control-pill" type="button">State</button>
+    <button id="copy-email" class="control-pill" type="button" data-email="<%= profile.email %>">Copy Email</button>
+  </div>
+
+  <div id="project-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel panel">
+      <button class="modal-close" type="button" data-close-modal aria-label="Close project modal">×</button>
+      <div id="modal-body"><h2 id="project-modal-title">Loading case study...</h2></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <aside id="advanced-state-panel" class="advanced-state-panel panel" aria-label="Advanced website state" aria-hidden="true">
+    <div class="state-panel-head">
+      <div>
+        <p class="section-label">Advanced State</p>
+        <h3>Runtime Store</h3>
+      </div>
+      <button id="state-panel-close" type="button" aria-label="Close state panel">×</button>
+    </div>
+    <div class="state-grid">
+      <span>Motion</span><strong id="state-motion">on</strong>
+      <span>Quality</span><strong id="state-quality">high</strong>
+      <span>Section</span><strong id="state-section">top</strong>
+      <span>Model</span><strong id="state-model">loading</strong>
+      <span>Frame</span><strong id="state-frame">000</strong>
+      <span>Scroll</span><strong id="state-progress">0%</strong>
+      <span>Wallet</span><strong id="state-wallet">disabled</strong>
+    </div>
+    <p class="state-note">State persists motion and quality in localStorage. Wallet features remain disabled.</p>
+  </aside>
+
+
+  <div id="command-palette" class="command-palette" aria-hidden="true" role="dialog" aria-label="Command palette">
+    <div class="command-backdrop" data-close-command></div>
+    <div class="command-panel panel">
+      <div class="command-search">
+        <span>⌘K</span>
+        <input id="command-input" placeholder="Type a command or section name..." autocomplete="off" />
+      </div>
+      <div class="command-list">
+        <button data-command-link="#projects">Go to Projects <small>P</small></button>
+        <button data-command-link="#services">Go to Services <small>S</small></button>
+        <button data-command-link="#pricing">Go to Pricing</button>
+        <button data-command-link="#process">Go to Process</button>
+        <button data-command-link="#contact">Go to Contact <small>C</small></button>
+        <button data-command-action="toggle-motion">Toggle Motion <small>M</small></button>
+        <button data-command-action="copy-email">Copy Email</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Home">
+      <span class="brand-mark">N</span>
+      <span><%= profile.name %></span>
+    </a>
+    <nav class="nav">
+      <a href="#projects">Projects</a>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#process">Process</a>
+      <a href="#testimonials">Signals</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><%= profile.eyebrow %></p>
+        <h1><%= profile.title %></h1>
+        <p class="hero-text"><%= profile.tagline %></p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <button class="btn ghost" hx-get="/partials/contact" hx-target="#contact-panel" hx-swap="innerHTML">Start Project</button>
+        </div>
+        <div class="privacy-badges" aria-label="Privacy features">
+          <span>No Wallet Required</span>
+          <span>No MetaMask Popup</span>
+          <span>No Token Tracking</span>
+        </div>
+      </div>
+      <aside class="blackhole-card reveal">
+        <div class="mini-blackhole"><span></span></div>
+        <p class="card-kicker">System status</p>
+        <h2>blackhole.glb</h2>
+        <ul class="status-list">
+          <li><span>Model</span><strong>Visible GLB</strong></li>
+          <li><span>Frames</span><strong><%= siteMeta.animationFrames %></strong></li>
+          <li><span>Theme</span><strong><%= siteMeta.theme %></strong></li>
+          <li><span>Wallet</span><strong>Disabled</strong></li>
+          <li><span>Build</span><strong>v<%= siteMeta.version %></strong></li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="section-shell about-grid reveal" id="about">
+      <div class="panel large-panel">
+        <p class="section-label">About</p>
+        <h2>Lightweight Web3 experiences built for speed and clarity.</h2>
+        <p><%= profile.bio %></p>
+      </div>
+      <div class="stats-grid">
+        <% profile.stats.forEach(stat => { %>
+          <div class="stat-card">
+            <strong><%= stat.value %></strong>
+            <span><%= stat.label %></span>
+          </div>
+        <% }) %>
+      </div>
+    </section>
+
+    <section class="section-shell" id="projects">
+      <div class="section-heading reveal">
+        <p class="section-label">Portfolio Dataset</p>
+        <h2>Featured Web3 Projects</h2>
+        <p>Use HTMX filters to update this project grid, then open case-study modals without a full page reload.</p>
+      </div>
+      <div id="projects-panel" class="reveal">
+        <%- include('partials/projects', { projects, activeCategory: 'All' }) %>
+      </div>
+    </section>
+
+    <section class="section-shell" id="services">
+      <div class="section-heading reveal">
+        <p class="section-label">Services</p>
+        <h2>What this portfolio can sell</h2>
+      </div>
+      <div id="services-panel" class="reveal">
+        <%- include('partials/services', { services }) %>
+      </div>
+    </section>
+
+
+
+    <section class="section-shell" id="pricing">
+      <div class="section-heading reveal">
+        <p class="section-label">Pricing</p>
+        <h2>Service packages</h2>
+        <p>Simple starting packages for Web3 portfolio, landing page, and product interface work.</p>
+      </div>
+      <div id="pricing-panel" class="reveal">
+        <%- include('partials/pricing', { pricing }) %>
+      </div>
+    </section>
+
+    <section class="section-shell" id="process">
+      <div class="section-heading reveal">
+        <p class="section-label">Build Process</p>
+        <h2>From strategy to launch</h2>
+        <p>A transparent process for turning Web3 ideas into fast, maintainable interfaces.</p>
+      </div>
+      <div id="process-panel" class="reveal">
+        <%- include('partials/process', { process }) %>
+      </div>
+    </section>
+
+    <section class="section-shell" id="trust">
+      <div class="section-heading reveal">
+        <p class="section-label">Trust & Security</p>
+        <h2>Privacy-friendly by default</h2>
+        <p>This project treats the absence of wallet features as a security and UX advantage.</p>
+      </div>
+      <div id="trust-panel" class="reveal">
+        <%- include('partials/trust', { trust }) %>
+      </div>
+    </section>
+
+    <section class="section-shell split-section" id="skills">
+      <div class="section-heading reveal">
+        <p class="section-label">Capabilities</p>
+        <h2>Skills & build stack</h2>
+        <p>All content comes from editable files in the <code>data/</code> folder.</p>
+      </div>
+      <div id="skills-panel" class="reveal">
+        <%- include('partials/skills', { skills }) %>
+      </div>
+    </section>
+
+    <section class="section-shell" id="contracts">
+      <div class="section-heading reveal">
+        <p class="section-label">Manual Contract Showcase</p>
+        <h2>Smart contract case studies</h2>
+        <p>Displays contract examples manually. No wallet connection, no token balances, no user wallet data.</p>
+      </div>
+      <div id="contracts-panel" class="reveal">
+        <%- include('partials/contracts', { contracts }) %>
+      </div>
+    </section>
+
+    <section class="section-shell" id="testimonials">
+      <div class="section-heading reveal">
+        <p class="section-label">Client Signals</p>
+        <h2>Testimonials dataset</h2>
+        <p>Social proof loaded from <code>data/testimonials.json</code>.</p>
+      </div>
+      <div id="testimonials-panel" class="reveal">
+        <%- include('partials/testimonials', { testimonials }) %>
+      </div>
+    </section>
+
+    <section class="section-shell" id="faq">
+      <div class="section-heading reveal">
+        <p class="section-label">FAQ</p>
+        <h2>Common questions</h2>
+        <p>Privacy, GLB model replacement, editable datasets, and future API upgrades.</p>
+      </div>
+      <div id="faq-panel" class="reveal">
+        <%- include('partials/faqs', { faqs }) %>
+      </div>
+    </section>
+
+    <section class="section-shell contact-section" id="contact">
+      <div class="section-heading reveal">
+        <p class="section-label">Contact</p>
+        <h2>Plan a Web3 frontend</h2>
+        <p>Submit the upgraded HTMX form and the backend saves the lead to <code>data/contact-submissions.json</code>.</p>
+      </div>
+      <div id="contact-panel" class="reveal">
+        <%- include('partials/contact-form', { values: {}, error: null, success: null }) %>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer section-shell">
+    <p>© <%= new Date().getFullYear() %> <%= profile.name %>. Built with HTMX, Express, EJS, and a local blackhole.glb background.</p>
+    <div>
+      <% profile.socials.forEach(link => { %>
+        <a href="<%= link.url %>"><%= link.label %></a>
+      <% }) %>
+    </div>
+  </footer>
+</body>
+</html>

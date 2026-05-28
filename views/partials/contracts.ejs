@@ -1,0 +1,16 @@
+<div class="contracts-list">
+  <% contracts.forEach(contract => { %>
+    <article class="contract-card panel">
+      <div>
+        <span class="badge"><%= contract.network %></span>
+        <h3><%= contract.name %></h3>
+        <p><%= contract.description %></p>
+        <p class="audit-note"><strong>Security note:</strong> <%= contract.audit %></p>
+      </div>
+      <div class="contract-meta">
+        <code><%= contract.address %></code>
+        <a class="btn small ghost" href="<%= contract.explorer %>">Explorer</a>
+      </div>
+    </article>
+  <% }) %>
+</div>

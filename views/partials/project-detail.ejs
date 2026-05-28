@@ -1,0 +1,38 @@
+<article class="project-detail">
+  <div class="modal-kicker"><%= project.category %> / <%= project.status %></div>
+  <h2><%= project.title %></h2>
+  <p class="modal-lead"><%= project.description %></p>
+
+  <div class="detail-grid">
+    <section>
+      <h3>Problem</h3>
+      <p><%= project.problem %></p>
+    </section>
+    <section>
+      <h3>Solution</h3>
+      <p><%= project.solution %></p>
+    </section>
+    <section>
+      <h3>Result</h3>
+      <p><%= project.result %></p>
+    </section>
+  </div>
+
+  <section class="timeline-block">
+    <h3>Build timeline</h3>
+    <ol class="case-timeline">
+      <% project.timeline.forEach((step, index) => { %>
+        <li><span><%= String(index + 1).padStart(2, '0') %></span><%= step %></li>
+      <% }) %>
+    </ol>
+  </section>
+
+  <div class="tag-list large-tags">
+    <% project.tech.forEach(tech => { %><span><%= tech %></span><% }) %>
+  </div>
+
+  <div class="modal-actions">
+    <a class="btn primary" href="<%= project.demo %>">View Demo</a>
+    <a class="btn ghost" href="<%= project.github %>">View GitHub</a>
+  </div>
+</article>

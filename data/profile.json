@@ -1,0 +1,19 @@
+{
+  "name": "NovaChain Studio",
+  "title": "Web3 Interface & Product Portfolio",
+  "eyebrow": "HTMX • Node.js • 3D Web3 Design",
+  "tagline": "We build fast, elegant decentralized product interfaces without heavy frontend complexity.",
+  "bio": "NovaChain Studio creates Web3 landing pages, NFT launch experiences, DAO dashboards, DeFi analytics interfaces, and smart contract presentation systems using lightweight, secure, maintainable technology.",
+  "location": "Remote / Global",
+  "email": "hello@novachain.dev",
+  "stats": [
+    { "label": "Web3 UI Projects", "value": "28+" },
+    { "label": "Chains Supported", "value": "12" },
+    { "label": "Average Lighthouse", "value": "95+" }
+  ],
+  "socials": [
+    { "label": "GitHub", "url": "#" },
+    { "label": "X / Twitter", "url": "#" },
+    { "label": "LinkedIn", "url": "#" }
+  ]
+}

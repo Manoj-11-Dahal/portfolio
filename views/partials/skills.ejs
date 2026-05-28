@@ -1,0 +1,10 @@
+<div class="skills-grid">
+  <% skills.forEach(group => { %>
+    <article class="skill-group panel">
+      <h3><%= group.group %></h3>
+      <div class="tag-list large-tags">
+        <% group.items.forEach(item => { %><span><%= item %></span><% }) %>
+      </div>
+    </article>
+  <% }) %>
+</div>

@@ -1,0 +1,9 @@
+<div class="card-grid services-grid">
+  <% services.forEach((service, index) => { %>
+    <article class="service-card panel" style="--delay:<%= index * 50 %>ms">
+      <div class="service-icon"><%= service.icon %></div>
+      <h3><%= service.title %></h3>
+      <p><%= service.description %></p>
+    </article>
+  <% }) %>
+</div>

@@ -1,0 +1,35 @@
+<div class="filter-row" aria-label="Project filters">
+  <% ['All', 'NFT', 'DeFi', 'DAO', 'Smart Contract', 'Identity', 'Token'].forEach(category => { %>
+    <button
+      class="chip <%= activeCategory === category ? 'active' : '' %>"
+      hx-get="/partials/projects?category=<%= encodeURIComponent(category) %>"
+      hx-target="#projects-panel"
+      hx-swap="innerHTML">
+      <%= category %>
+    </button>
+  <% }) %>
+</div>
+
+<div class="card-grid projects-grid">
+  <% if (!projects.length) { %>
+    <div class="panel"><p>No projects found for this filter.</p></div>
+  <% } %>
+  <% projects.forEach((project, index) => { %>
+    <article class="project-card panel" style="--delay:<%= index * 60 %>ms">
+      <div class="card-topline">
+        <span class="badge"><%= project.category %></span>
+        <span class="status"><%= project.status %></span>
+      </div>
+      <h3><%= project.title %></h3>
+      <p><%= project.description %></p>
+      <div class="tag-list">
+        <% project.tech.forEach(tech => { %><span><%= tech %></span><% }) %>
+      </div>
+      <div class="card-links">
+        <button class="text-link open-project" hx-get="/partials/project/<%= project.slug %>" hx-target="#modal-body" hx-swap="innerHTML">Case Study</button>
+        <a href="<%= project.demo %>">Demo</a>
+        <a href="<%= project.github %>">GitHub</a>
+      </div>
+    </article>
+  <% }) %>
+</div>

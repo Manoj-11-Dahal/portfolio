@@ -1,0 +1,6 @@
+[
+  { "group": "Frontend", "items": ["HTMX", "HTML Templates", "Responsive CSS", "Accessibility", "Three/WebGL Backgrounds"] },
+  { "group": "Backend", "items": ["Node.js", "Express", "EJS", "REST Routes", "Validation", "JSON Data APIs"] },
+  { "group": "Blockchain UI", "items": ["NFT Mint Pages", "DeFi Dashboards", "DAO Interfaces", "Contract Showcases", "Explorer Links"] },
+  { "group": "Tooling", "items": ["Hardhat UI Flows", "Foundry Docs", "IPFS Metadata", "CI/CD", "Deployment"] }
+]

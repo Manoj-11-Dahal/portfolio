@@ -1,0 +1,6 @@
+
+> web3-portfolio-htmx@1.0.0 start
+> node server.js
+
+Web3 portfolio running locally at http://localhost:3000
+Network access enabled on http://0.0.0.0:3000

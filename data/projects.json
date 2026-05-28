@@ -1,0 +1,151 @@
+[
+  {
+    "title": "AetherMint Launchpad",
+    "category": "NFT",
+    "description": "A cinematic NFT minting landing page with phased reveal sections, collection details, FAQ, and admin-editable dataset content.",
+    "tech": [
+      "HTMX",
+      "Express",
+      "EJS",
+      "Solidity UI",
+      "IPFS"
+    ],
+    "status": "Completed",
+    "demo": "#",
+    "github": "#",
+    "slug": "aethermint-launchpad",
+    "problem": "NFT teams needed a premium launch page that felt cinematic but stayed simple to update before mint day.",
+    "solution": "Built a dataset-driven HTMX experience with collection sections, mint-flow presentation, roadmap, FAQ, and rich animated UI states.",
+    "result": "Reduced launch-page complexity and created a reusable structure for future collection drops.",
+    "timeline": [
+      "Discovery and launch narrative",
+      "Dataset structure and content model",
+      "Animated interface build",
+      "Backend partial routes",
+      "Launch polish and QA"
+    ]
+  },
+  {
+    "title": "YieldScope Analytics",
+    "category": "DeFi",
+    "description": "A DeFi protocol analytics interface showing pool metrics, staking cards, APY explainers, and protocol documentation pages.",
+    "tech": [
+      "Node.js",
+      "HTMX",
+      "Chart UI",
+      "REST APIs"
+    ],
+    "status": "Prototype",
+    "demo": "#",
+    "github": "#",
+    "slug": "yieldscope-analytics",
+    "problem": "A DeFi concept needed a clear dashboard interface to explain yield, risk, pools, and protocol value.",
+    "solution": "Designed modular metric cards, protocol panels, APY explanation sections, and a backend-ready architecture for future API data.",
+    "result": "Created a prototype that can evolve into a production analytics dashboard.",
+    "timeline": [
+      "Metric architecture",
+      "Dashboard wireframe",
+      "Card component system",
+      "Prototype build",
+      "Performance pass"
+    ]
+  },
+  {
+    "title": "DAO Compass",
+    "category": "DAO",
+    "description": "A governance portfolio concept with proposal cards, role summaries, contributor profiles, and voting flow wireframes.",
+    "tech": [
+      "Express",
+      "EJS",
+      "HTMX",
+      "JSON Dataset"
+    ],
+    "status": "Case Study",
+    "demo": "#",
+    "github": "#",
+    "slug": "dao-compass",
+    "problem": "DAO contributors needed a more readable way to understand proposals, roles, and governance activity.",
+    "solution": "Created governance cards, contributor profile patterns, lifecycle steps, and onboarding-focused information architecture.",
+    "result": "Improved proposal discoverability and made DAO participation easier to explain.",
+    "timeline": [
+      "Governance research",
+      "User journey mapping",
+      "Proposal UI design",
+      "Role system layout",
+      "Case study packaging"
+    ]
+  },
+  {
+    "title": "Contract Atlas",
+    "category": "Smart Contract",
+    "description": "A verified contract showcase system for displaying networks, audit notes, explorer links, and integration examples.",
+    "tech": [
+      "Node.js",
+      "Security Notes",
+      "Explorer Links"
+    ],
+    "status": "Live Concept",
+    "demo": "#",
+    "github": "#",
+    "slug": "contract-atlas",
+    "problem": "Smart contract work is often hidden in explorers and difficult for clients to understand.",
+    "solution": "Built a contract showcase format with networks, addresses, audit notes, security context, and explorer links.",
+    "result": "Turned technical contract data into a presentable portfolio asset.",
+    "timeline": [
+      "Contract inventory",
+      "Security note format",
+      "Explorer link model",
+      "Showcase card design",
+      "Documentation pass"
+    ]
+  },
+  {
+    "title": "zkIdentity Landing",
+    "category": "Identity",
+    "description": "A privacy-focused landing page for a zero-knowledge identity startup with animated architecture diagrams and waitlist capture.",
+    "tech": [
+      "HTMX",
+      "CSS",
+      "Node.js",
+      "3D GLB"
+    ],
+    "status": "Completed",
+    "demo": "#",
+    "github": "#",
+    "slug": "zkidentity-landing",
+    "problem": "A zero-knowledge identity concept needed a trust-focused landing page with a privacy-first message.",
+    "solution": "Designed a dark, minimal interface with architecture explainers, waitlist CTA, and animated depth effects.",
+    "result": "Created a strong early-stage landing page for product validation.",
+    "timeline": [
+      "Positioning",
+      "Visual direction",
+      "Architecture sections",
+      "Waitlist CTA",
+      "Responsive polish"
+    ]
+  },
+  {
+    "title": "TokenForge Brand Site",
+    "category": "Token",
+    "description": "A token project website with tokenomics sections, roadmap, team cards, documentation links, and responsive animations.",
+    "tech": [
+      "EJS",
+      "Express",
+      "Dataset-driven UI"
+    ],
+    "status": "Completed",
+    "demo": "#",
+    "github": "#",
+    "slug": "tokenforge-brand-site",
+    "problem": "Token projects need clear tokenomics, roadmap, and trust sections without overwhelming visitors.",
+    "solution": "Built a dataset-driven brand site with tokenomics blocks, roadmap, team cards, and documentation links.",
+    "result": "Delivered a reusable token-site structure for fast campaign launches.",
+    "timeline": [
+      "Brand system",
+      "Tokenomics layout",
+      "Roadmap component",
+      "Team cards",
+      "Deployment setup"
+    ]
+  }
+]

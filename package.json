@@ -1,0 +1,24 @@
+{
+  "name": "web3-portfolio-htmx",
+  "version": "1.0.0",
+  "description": "HTMX + Node/Express Web3 portfolio without wallet features, with a generated blackhole.glb 3D background, cursor effects, and motion animations.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "generate:model": "python3 scripts/generate_glb.py",
+    "copy:motion": "node scripts/copy_motion.js",
+    "postinstall": "node scripts/copy_motion.js",
+    "start:host": "HOST=0.0.0.0 PORT=3000 node server.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "framer-motion": "^12.40.0",
+    "helmet": "^7.1.0",
+    "motion": "^12.40.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

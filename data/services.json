@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Web3 Portfolio Websites",
+    "description": "Personal, founder, or agency sites with project datasets, animated backgrounds, and high-conversion sections.",
+    "icon": "◈"
+  },
+  {
+    "title": "NFT Launch Interfaces",
+    "description": "Collection landing pages, minting UX mockups, reveal explainers, roadmap sections, and media galleries.",
+    "icon": "✦"
+  },
+  {
+    "title": "DeFi Dashboard Frontends",
+    "description": "Protocol overview pages, staking interfaces, pool cards, metric modules, and documentation-focused layouts.",
+    "icon": "▣"
+  },
+  {
+    "title": "DAO & Governance Sites",
+    "description": "Proposal browsing layouts, role pages, contributor directories, governance education, and onboarding funnels.",
+    "icon": "⬡"
+  },
+  {
+    "title": "Smart Contract Showcases",
+    "description": "Manual contract listings with chain, address, audit note, explorer link, status, and integration details.",
+    "icon": "⌁"
+  },
+  {
+    "title": "Backend Data Systems",
+    "description": "Express backends, HTMX partials, JSON/SQLite datasets, contact lead capture, and deploy-ready APIs.",
+    "icon": "✺"
+  }
+]

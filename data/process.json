@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Strategy",
+    "description": "Define the audience, conversion goal, Web3 narrative, privacy boundaries, and content model."
+  },
+  {
+    "title": "Interface Design",
+    "description": "Create a cinematic visual system with clear sections, strong hierarchy, and accessibility-aware motion."
+  },
+  {
+    "title": "Backend Setup",
+    "description": "Build Express routes, HTMX partials, JSON datasets, contact validation, and deployment-friendly structure."
+  },
+  {
+    "title": "Motion Layer",
+    "description": "Integrate the blackhole.glb background, cursor effects, scroll frames, modals, and reduced-motion controls."
+  },
+  {
+    "title": "Launch",
+    "description": "Test performance, polish mobile layouts, configure SEO files, and prepare hosting instructions."
+  }
+]

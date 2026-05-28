@@ -1,0 +1,26 @@
+[
+  {
+    "name": "AetherMint ERC-721",
+    "network": "Ethereum Sepolia",
+    "address": "0x71C7656EC7ab88b098defB751B7401B5f6d8976F",
+    "description": "NFT minting contract presentation with allowlist, public sale, provenance hash, and metadata reveal notes.",
+    "audit": "Internal review checklist completed",
+    "explorer": "#"
+  },
+  {
+    "name": "YieldVault Strategy",
+    "network": "Base Testnet",
+    "address": "0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199",
+    "description": "Vault interface case study displaying deposits, strategy explanation, risk labels, and APY calculation notes.",
+    "audit": "External audit recommended before mainnet",
+    "explorer": "#"
+  },
+  {
+    "name": "Governance Timelock",
+    "network": "Polygon Mumbai",
+    "address": "0xdD2FD4581271e230360230F9337D5c0430Bf44C0",
+    "description": "DAO contract showcase with proposal lifecycle, timelock delays, roles, and emergency controls documentation.",
+    "audit": "Role permissions documented",
+    "explorer": "#"
+  }
+]

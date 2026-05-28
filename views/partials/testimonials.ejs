@@ -1,0 +1,13 @@
+<div class="testimonial-grid">
+  <% testimonials.forEach((item, index) => { %>
+    <article class="testimonial-card panel" style="--delay:<%= index * 70 %>ms">
+      <div class="quote-mark">“</div>
+      <p><%= item.quote %></p>
+      <div class="testimonial-author">
+        <strong><%= item.name %></strong>
+        <span><%= item.role %></span>
+        <small><%= item.project %></small>
+      </div>
+    </article>
+  <% }) %>
+</div>

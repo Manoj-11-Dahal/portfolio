@@ -1,0 +1,88 @@
+<form class="contact-form panel" hx-post="/api/contact" hx-target="#contact-panel" hx-swap="innerHTML">
+  <% if (success) { %><div class="alert success"><%= success %></div><% } %>
+  <% if (error) { %><div class="alert error"><%= error %></div><% } %>
+
+  <input class="honeypot" name="website" value="" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+  <div class="form-step">
+    <span class="step-badge">01</span>
+    <div>
+      <h3>Project basics</h3>
+      <p>Tell us what kind of interface you want to build.</p>
+    </div>
+  </div>
+
+  <div class="form-grid">
+    <label>
+      <span>Name</span>
+      <input name="name" value="<%= values.name || '' %>" placeholder="Your name" required />
+    </label>
+    <label>
+      <span>Email</span>
+      <input type="email" name="email" value="<%= values.email || '' %>" placeholder="you@example.com" required />
+    </label>
+  </div>
+
+  <div class="form-grid">
+    <label>
+      <span>Company / Brand</span>
+      <input name="company" value="<%= values.company || '' %>" placeholder="Optional" />
+    </label>
+    <label>
+      <span>Deadline</span>
+      <select name="deadline">
+        <% ['Flexible', '2-4 weeks', '1-2 months', 'This quarter', 'Urgent'].forEach(option => { %>
+          <option <%= values.deadline === option ? 'selected' : '' %>><%= option %></option>
+        <% }) %>
+      </select>
+    </label>
+  </div>
+
+  <div class="form-step">
+    <span class="step-badge">02</span>
+    <div>
+      <h3>Scope</h3>
+      <p>Choose the project type and budget range.</p>
+    </div>
+  </div>
+
+  <div class="form-grid">
+    <label>
+      <span>Project Type</span>
+      <select name="projectType">
+        <% ['Web3 Portfolio', 'NFT Website', 'DeFi Dashboard', 'DAO Platform', 'Smart Contract Showcase', 'Other'].forEach(option => { %>
+          <option <%= values.projectType === option ? 'selected' : '' %>><%= option %></option>
+        <% }) %>
+      </select>
+    </label>
+    <label>
+      <span>Budget Range</span>
+      <select name="budget">
+        <% ['$500 - $1k', '$1k - $3k', '$3k - $7k', '$7k+', 'Not sure yet'].forEach(option => { %>
+          <option <%= values.budget === option ? 'selected' : '' %>><%= option %></option>
+        <% }) %>
+      </select>
+    </label>
+  </div>
+
+  <label>
+    <span>Preferred Style</span>
+    <select name="style">
+      <% ['Black hole cinematic', 'Dark neon', 'Minimal premium', 'Cyber grid', 'Not sure yet'].forEach(option => { %>
+        <option <%= values.style === option ? 'selected' : '' %>><%= option %></option>
+      <% }) %>
+    </select>
+  </label>
+
+  <label>
+    <span>Required Pages / Sections</span>
+    <input name="pages" value="<%= values.pages || '' %>" placeholder="Example: Hero, Projects, Services, FAQ, Contact" />
+  </label>
+
+  <label>
+    <span>Message</span>
+    <textarea name="message" rows="5" maxlength="1200" placeholder="Tell me about your project..." required><%= values.message || '' %></textarea>
+  </label>
+
+  <button class="btn primary" type="submit">Send Project Brief</button>
+</form>

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Starter Landing",
+    "price": "$500+",
+    "description": "A focused Web3 landing page with dark premium design, editable content, contact form, and deployment notes.",
+    "features": ["1-page portfolio or product site", "Editable JSON content", "Contact form backend", "Responsive design"]
+  },
+  {
+    "name": "Portfolio Pro",
+    "price": "$1.5k+",
+    "description": "A full Web3 portfolio with project filters, case-study modals, testimonials, FAQ, and black hole motion layer.",
+    "features": ["Project case studies", "HTMX dynamic sections", "blackhole.glb background", "SEO/social preview setup"]
+  },
+  {
+    "name": "Product Interface",
+    "price": "$3k+",
+    "description": "A larger Web3 frontend/backend system for dashboards, DAO portals, contract showcases, or launch campaigns.",
+    "features": ["Custom backend routes", "Dataset architecture", "Admin-ready structure", "Deployment support"]
+  }
+]

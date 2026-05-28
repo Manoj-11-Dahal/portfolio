@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="g" cx="68%" cy="45%" r="45%"><stop stop-color="#7c3aed"/><stop offset=".45" stop-color="#071126"/><stop offset="1" stop-color="#020617"/></radialGradient>
+    <linearGradient id="t" x1="0" x2="1"><stop stop-color="#67e8f9"/><stop offset=".5" stop-color="#c4b5fd"/><stop offset="1" stop-color="#fb923c"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <ellipse cx="790" cy="310" rx="250" ry="72" fill="none" stroke="url(#t)" stroke-width="22" opacity=".9"/>
+  <circle cx="790" cy="310" r="118" fill="#000"/>
+  <text x="82" y="210" fill="#67e8f9" font-family="Arial" font-size="28" font-weight="700" letter-spacing="5">HTMX • EXPRESS • GLB</text>
+  <text x="80" y="305" fill="white" font-family="Arial" font-size="72" font-weight="900">NovaChain Studio</text>
+  <text x="82" y="370" fill="#cbd5e1" font-family="Arial" font-size="34">Web3 portfolio with black hole motion</text>
+  <text x="82" y="445" fill="#bbf7d0" font-family="Arial" font-size="26" font-weight="700">No wallet required • No MetaMask popup</text>
+</svg>

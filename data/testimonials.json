@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Mira V.",
+    "role": "Founder, NFT Collective",
+    "quote": "The portfolio system felt premium and was easy to update before launch. The black hole motion made the site memorable without needing a heavy frontend framework.",
+    "project": "AetherMint Launchpad"
+  },
+  {
+    "name": "Jon K.",
+    "role": "Product Lead, DeFi Prototype",
+    "quote": "The dashboard layout made complex protocol information feel simple. HTMX interactions kept the experience fast and focused.",
+    "project": "YieldScope Analytics"
+  },
+  {
+    "name": "Leah R.",
+    "role": "DAO Operations",
+    "quote": "The case-study approach helped explain governance tools to non-technical contributors and stakeholders.",
+    "project": "DAO Compass"
+  }
+]

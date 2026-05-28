@@ -1,0 +1,22 @@
+[
+  {
+    "question": "Does this website use wallet connect?",
+    "answer": "No. Wallet connect, MetaMask prompts, wallet analytics, token balances, and user NFT fetching are intentionally disabled. The site is privacy-friendly by default."
+  },
+  {
+    "question": "Can I replace blackhole.glb with my own model?",
+    "answer": "Yes. Put your GLB file in public/models and update the renderer path. The current blackhole.glb also includes metadata used for the custom animation."
+  },
+  {
+    "question": "Can projects and services be edited without changing templates?",
+    "answer": "Yes. Most content lives in JSON files inside the data folder, including projects, services, skills, contracts, testimonials, and FAQs."
+  },
+  {
+    "question": "Can live Web3 APIs be added later?",
+    "answer": "Yes. Backend API routes can be added later, while still keeping wallet features disabled unless you explicitly choose to add them."
+  },
+  {
+    "question": "Where do contact submissions go?",
+    "answer": "The backend saves form submissions to data/contact-submissions.json. This can later be upgraded to SQLite, email, or a CRM integration."
+  }
+]

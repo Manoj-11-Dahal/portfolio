@@ -1,0 +1,10 @@
+[
+  "No wallet connection by default",
+  "No MetaMask popups",
+  "No private key or token access",
+  "No user wallet tracking",
+  "Backend validation for contact form",
+  "Honeypot spam field included",
+  "Environment variable support",
+  "Editable local datasets"
+]
